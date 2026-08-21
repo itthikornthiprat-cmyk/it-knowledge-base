@@ -1,0 +1,71 @@
+# 📚 I.T. Knowledge Base System
+
+คลังเก็บความรู้และโค้ดตัวอย่างทางเทคโนโลยี (IT Knowledge Base) พัฒนาขึ้นเพื่อรวบรวมข้อมูล คำอธิบายการทำงาน และโค้ดตัวอย่างในสายงานไอที พร้อมระบบจัดการผู้ใช้งานและระบบหลังบ้านสำหรับผู้ดูแลระบบ
+
+---
+
+## 🛠️ Tech Stack (เทคโนโลยีที่ใช้)
+* **Frontend:** React (Vite) + Tailwind CSS + Lucide Icons
+* **Backend:** Laravel (API)
+* **Database:** MySQL (XAMPP)
+
+---
+
+## 📂 Project Structure (โครงสร้างโปรเจกต์)
+โปรเจกต์นี้ถูกพัฒนาแบบแยกส่วน (Separated Folders / Monorepo):
+* `backend-api/` - ส่วนของ Laravel Backend (API สำหรับจัดการข้อมูลและความปลอดภัย)
+* `frontend-ui/` - ส่วนของ React Frontend (ส่วนแสดงผลหน้าเว็บไซต์)
+
+---
+
+## 🚀 วิธีการติดตั้งและรันโปรเจกต์ในเครื่อง (Local Setup)
+
+ก่อนเริ่มใช้งาน ตรวจสอบให้แน่ใจว่าเครื่องของคุณได้ติดตั้ง **PHP**, **Composer**, **Node.js**, และ **XAMPP** เรียบร้อยแล้ว
+
+### 1. ตั้งค่าฐานข้อมูล (Database)
+1. เปิดโปรแกรม **XAMPP Control Panel** และกด **Start** ที่ Apache และ MySQL
+2. เข้าไปที่ phpMyAdmin สร้างฐานข้อมูลใหม่ (เช่นชื่อ `it_ui_db` หรือตามที่กำหนดในโปรเจกต์)
+3. นำเข้าไฟล์ฐานข้อมูล (.sql) เข้าสู่ระบบ
+
+### 2. รันฝั่ง Backend (Laravel API)
+เปิด Terminal แยกลงไปในโฟลเดอร์หลังบ้าน แล้วรันคำสั่งตามลำดับ:
+```bash
+# เข้าไปที่โฟลเดอร์ backend
+cd backend-api
+
+# ติดตั้งแพ็กเกจ PHP
+composer install
+
+# คัดลอกไฟล์ตั้งค่าสภาพแวดล้อม
+cp .env.example .env
+
+# สร้าง Application Key
+php artisan key:generate
+
+# รันเซิร์ฟเวอร์หลังบ้าน
+php artisan serve
+
+ระบบหลังบ้านจะรันที่พอร์ต http://127.0.0.1:8000)
+
+3. รันฝั่ง Frontend (React)
+เปิด Terminal อีกหน้าต่างหนึ่ง แล้วเข้าไปที่โฟลเดอร์หน้าบ้าน:
+# เข้าไปที่โฟลเดอร์ frontend
+cd frontend-ui
+
+# ติดตั้งแพ็กเกจ Node.js
+npm install
+
+# รันเซิร์ฟเวอร์หน้าบ้าน
+npm run dev
+(ระบบหน้าบ้านจะรันที่พอร์ต http://localhost:5173)
+การใช้งานผ่านอินเทอร์เน็ตภายนอก (ด้วย Ngrok)
+หากต้องการแชร์ลิงก์ให้ผู้อื่นเข้าชมหรือทดสอบผ่านมือถือ:
+
+เปิด Command Prompt แล้วรันคำสั่งเชื่อมต่อพอร์ต 5173 ของ Vite:
+
+Bash
+ngrok http 5173
+นำลิงก์ Forwarding ที่ได้ (เช่น https://xxxx.ngrok-free.dev) ไปเปิดใช้งานบนเบราว์เซอร์หรือมือถือได้ทันที
+
+👤 ผู้พัฒนา (Developer)
+ชื่อ-นามสกุล: อิทธิกร ทิพย์รัตน์ (Itthikorn Thiprat)

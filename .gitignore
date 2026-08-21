@@ -1,0 +1,8 @@
+# Laravel
+backend-api/vendor/
+backend-api/.env
+backend-api/storage/*.key
+
+# React
+frontend-ui/node_modules/
+frontend-ui/dist/
