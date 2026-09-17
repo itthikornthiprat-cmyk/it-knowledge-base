@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+
+// กำหนด Base URL ให้ Axios ชี้ไปที่ Render ตาม Environment Variable ที่ตั้งไว้บน Vercel
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'https://it-knowledge-base-backend.onrender.com';
+
 import { Layout, Cpu, BookOpen, Search, Plus, Trash2, Edit, Copy, Check, User, Mail, Key, CheckCircle, AlertCircle, ArrowRight, Code, LogOut, Bookmark, ShieldAlert } from 'lucide-react';
 import logoImg from './logo.png'; // นำเข้าโลโก้ของคุณ
 
