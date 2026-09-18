@@ -9,7 +9,8 @@ class ComponentItem extends Model
 {
     use HasFactory;
 
-    // อนุญาตให้ฟิลด์เหล่านี้บันทึกข้อมูลลงฐานข้อมูลได้
+    protected $table = 'components'; // <-- เปลี่ยนตรงนี้ให้ตรงกับชื่อตารางจริงใน Aiven
+
     protected $fillable = [
         'name',
         'category',
